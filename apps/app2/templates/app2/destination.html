@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Destination</title>
+  </head>
+  <style media="screen">
+    body {
+      margin-right: auto;
+      margin-left: auto;
+      margin-top: 10px;
+      width: 500px;
+      text-align: left;
+      font-family: sans-serif;
+    }
+    h1 {
+      color: green;
+    }
+  </style>
+  <body>
+
+    <h1>Trip Information:</h1>
+
+    {% for i in trip %}
+      <h2><em>Organizer</em> - {{i.created_by}}</h2>
+      <h3><em>From</em> - {{i.travel_start}}</h3>
+      <h3><em>To</em> - {{i.travel_end}}</h3>
+      <h2><em>Description</em> - {{i.description}}</h2>
+    {% endfor %}
+
+    {% if all_trip_users_minus_current_user %}
+    <h1>Trip Roster:</h1>
+    {% endif %}
+
+    {% for i in all_trip_users_minus_current_user %}
+    <!-- {% if i.username == trip.created_by %}
+    <ul>
+      <li><p>{{ i.name }} (Organizer)</p></li>
+    </ul>
+    {% endif %} -->
+    <ul>
+      <li><p>{{ i.name }}</p></li>
+    </ul>
+    {% endfor %}
+
+    <form class="" action="/app2/travels" method="post">
+      {% csrf_token %}
+      <input type="submit" name="submit" value="Back to Dashboard">
+    </form>
+
+    <form class="" action="/app2/log_out" method="post">
+      {% csrf_token %}
+      <input type="submit" name="submit" value="Log out">
+    </form>
+
+  </body>
+</html>
