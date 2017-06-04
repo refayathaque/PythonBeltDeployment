@@ -2,65 +2,79 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Main</title>
+    <title>Travel Buddy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
   </head>
-  <style media="screen">
-    body {
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 10px;
-      width: 350px;
-      text-align: left;
-      font-family: sans-serif;
-    }
-    h2 {
-      color: blue;
-    }
-    h3 {
-      color: red;
-    }
-    form {
-      color: black;
-    }
-    h1 {
-      color: green;
-    }
-  </style>
   <body>
 
-    <h1>Welcome to Trips!</h1>
+    <div class="jumbotron">
+        <h1 class="display-3">Hey Travel Buddy!</h1>
+            <p class="lead">Join us in planning awesome trips for you and your buddies. You can also join trips other buddies have planned. We provide an easy way for you to see what trips are avaialble to you, and tell you which buddy planned the trip and where the trip will take you.</p>
+        <hr class="my-4">
+            <p>*We've used Python's Django Framework and its Object-Relational Mapping technologies in developing the platform's back-end, while utilizing Bootstrap for the front-end.</p>
+            <p class="lead">
+                <a class="btn btn-primary" href="https://github.com/refayathaque/PythonBeltDeployment" role="button">Check out our code here</a>
+            </p>
+    </div>
 
-    <h2>New user? Sign up here!</h2>
+    <h3 class="text-center">New user? Register here</h3>
 
-    <form class="" action="/registration" method="post">
-    {% csrf_token %}
-      Name .............. <input type="text" name="name" value="">
-      <br>
-      Username .............. <input type="text" name="username" value="">
-      <br>
-      Password .............. <input type="password" name="password" value="">
-      <br>
-      Confirm Password .............. <input type="password" name="password_confirmation" value="">
-      <br>
-      <input type="submit" name="submit" value="Register">
-    </form>
+    <div class="container-fluid">
+        <form class="" action="/registration" method="post">
+        {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" placeholder="Enter your full name" name="name" value="">
+                <small class="form-text text-muted">We'll never share your information with anyone else.</small>
+            </div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" class="form-control" placeholder="" name="username" value="">
+                <small class="form-text text-muted">This is what your buddies will see.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" placeholder="" name="password" value="">
+                <small class="form-text text-muted">Must have at least eight or more characters.</small>
+            </div>
+            <div class="form-group">
+                <label for="password_confirmation">Confirm Password</label>
+                <input type="password" class="form-control" placeholder="" name="password_confirmation" value="">
+                <small class="form-text text-muted">Must match what was input above!</small>
+            </div>
+            <button type="submit" name="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
 
-    {% if messages %}
-      {% for message in messages %}
-        <h3>{{ message }}</h3>
-      {% endfor %}
-    {% endif %}
+    <div class="container-fluid">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>OH SNAP!</strong> {{ message }}
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
 
-    <h2>Exisiting user? Sign in here!</h2>
+    <h3 class="text-center">Exisiting user? Login here</h3>
 
-    <form class="" action="/login" method="post">
-    {% csrf_token %}
-      Username .............. <input type="text" name="username" value="">
-      <br>
-      Password .............. <input type="password" name="password" value="">
-      <br>
-      <input type="submit" name="submit" value="Login">
-    </form>
+    <div class="container-fluid">
+        <form class="" action="/login" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" class="form-control" placeholder="" name="username" value="">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" placeholder="" name="password" value="">
+        </div>
+        <button type="submit" name="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+    <p style="text-align:center; margin-bottom:30px;">Written and coded by <a href="https://refayathaque.github.io/" target="_blank">Refayat Haque</a></p>
 
   </body>
 </html>
