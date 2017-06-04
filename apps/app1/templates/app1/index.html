@@ -12,10 +12,20 @@
         <h1 class="display-3">Hey Travel Buddy!</h1>
             <p class="lead">Join us in planning awesome trips for you and your buddies. You can also join trips other buddies have planned. We provide an easy way for you to see what trips are avaialble to you, and tell you which buddy planned the trip and where the trip will take you.</p>
         <hr class="my-4">
-            <p>*We've used Python's Django Framework and its Object-Relational Mapping technologies in developing the platform's back-end, while utilizing Bootstrap for the front-end.</p>
+            <p>*I've used Python's Django Framework and its Object-Relational Mapping technologies in developing the platform's back-end, while utilizing Bootstrap for the front-end.</p>
             <p class="lead">
                 <a class="btn btn-primary" href="https://github.com/refayathaque/PythonBeltDeployment" role="button">Check out our code here</a>
             </p>
+    </div>
+
+    <div class="container-fluid">
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>{{ message }}</strong>
+                </div>
+            {% endfor %}
+        {% endif %}
     </div>
 
     <h3 class="text-center">New user? Register here</h3>
@@ -47,17 +57,7 @@
         </form>
     </div>
 
-    <div class="container-fluid">
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-danger" role="alert">
-                    <strong>OH SNAP!</strong> {{ message }}
-                </div>
-            {% endfor %}
-        {% endif %}
-    </div>
-
-    <h3 class="text-center">Exisiting user? Login here</h3>
+    <h3 class="text-center" style="margin-top:30px;">Exisiting user? Login here</h3>
 
     <div class="container-fluid">
         <form class="" action="/login" method="post">
@@ -74,7 +74,7 @@
         </form>
     </div>
 
-    <p style="text-align:center; margin-bottom:30px;">Written and coded by <a href="https://refayathaque.github.io/" target="_blank">Refayat Haque</a></p>
+    <p style="text-align:center; margin-bottom:30px; margin-top:30px;">Designed and Developed by <a href="https://refayathaque.github.io/" target="_blank">Refayat Haque</a></p>
 
   </body>
 </html>
