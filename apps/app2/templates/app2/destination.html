@@ -3,20 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Destination</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   </head>
-  <style media="screen">
-    body {
-      margin-right: auto;
-      margin-left: auto;
-      margin-top: 10px;
-      width: 500px;
-      text-align: left;
-      font-family: sans-serif;
-    }
-    h1 {
-      color: green;
-    }
-  </style>
   <body>
 
     <h1>Trip Information:</h1>
@@ -43,15 +31,16 @@
     </ul>
     {% endfor %}
 
+    <div class="container-fluid">
     <form class="" action="/app2/travels" method="post">
       {% csrf_token %}
-      <input type="submit" name="submit" value="Back to Dashboard">
+      <input style="margin-top: 15px; margin-bottom: 15px;"class="btn btn-info" type="submit" name="submit" value="Back to Dashboard">
     </form>
-
     <form class="" action="/app2/log_out" method="post">
       {% csrf_token %}
-      <input type="submit" name="submit" value="Log out">
+      <input class="btn btn-warning" type="submit" name="submit" value="Log out">
     </form>
+    </div>
 
   </body>
 </html>

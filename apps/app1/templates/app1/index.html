@@ -4,8 +4,16 @@
     <meta charset="utf-8">
     <title>Travel Buddy</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
   </head>
+  <style media="screen">
+  .style-two { /* <hr> line that fades out on both ends */
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+      margin-top: 30px;
+  }
+  </style>
   <body>
 
     <div class="jumbotron">
@@ -14,21 +22,20 @@
         <hr class="my-4">
             <p>*I've used Python's Django Framework and its Object-Relational Mapping technologies in developing the platform's back-end, while utilizing Bootstrap for the front-end.</p>
             <p class="lead">
-                <a class="btn btn-primary" href="https://github.com/refayathaque/PythonBeltDeployment" role="button">Check out our code here</a>
-            </p>
+            <a class="btn btn-info" href="https://github.com/refayathaque/PythonBeltDeployment" role="button">Check out my code here</a></p>
     </div>
 
     <div class="container-fluid">
         {% if messages %}
             {% for message in messages %}
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger text-center" role="alert">
                     <strong>{{ message }}</strong>
                 </div>
             {% endfor %}
         {% endif %}
     </div>
 
-    <h3 class="text-center">New user? Register here</h3>
+    <h3 class="text-center" style="margin-top:30px;">New user? Register here</h3>
 
     <div class="container-fluid">
         <form class="" action="/registration" method="post">
@@ -53,7 +60,7 @@
                 <input type="password" class="form-control" placeholder="" name="password_confirmation" value="">
                 <small class="form-text text-muted">Must match what was input above!</small>
             </div>
-            <button type="submit" name="submit" class="btn btn-primary">Register</button>
+            <button type="submit" name="submit" class="btn btn-success">Register</button>
         </form>
     </div>
 
@@ -70,11 +77,15 @@
             <label for="password">Password</label>
             <input type="password" class="form-control" placeholder="" name="password" value="">
         </div>
-        <button type="submit" name="submit" class="btn btn-primary">Login</button>
+        <button type="submit" name="submit" class="btn btn-success">Login</button>
         </form>
     </div>
 
-    <p style="text-align:center; margin-bottom:30px; margin-top:30px;">Designed and Developed by <a href="https://refayathaque.github.io/" target="_blank">Refayat Haque</a></p>
+    <hr class="style-two">
+
+    <p style="text-align:center; margin-bottom:3px; margin-top:30px;">Designed and Developed by <a href="https://refayathaque.github.io/" target="_blank">Refayat Haque</a></p>
+
+    <p style="text-align:center; margin-bottom:30px; margin-top:3px;">Hosted with <i class="fa fa-heart" aria-hidden="true"></i> on <i class="fa fa-github" aria-hidden="true"></i> and <i class="fa fa-amazon" aria-hidden="true"></i>WS</p>
 
   </body>
 </html>
