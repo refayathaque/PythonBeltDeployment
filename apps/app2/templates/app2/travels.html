@@ -35,7 +35,7 @@
     <!-- TRIP SCHEDULES -->
     {% if request.session.logged_in_user_username %}
         {% if all_user_trips %}
-        <h2 style="color : green">Your trips are:</h2>
+        <h2>Your trips are:</h2>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -61,7 +61,7 @@
 
     {% if request.session.registered_user_username %}
         {% if all_user_trips %}
-        <h2 style="color : green">Your trips are:</h2>
+        <h2>Your trips are:</h2>
             <table class="table table-hover">
                 <thead>
                     <tr>
@@ -89,7 +89,7 @@
     <!-- ALL TRIPS -->
     <div class="container-fluid">
         {% if all_trips_minus_what_users_are_part_of %}
-        <h2 style="color : green">Join a buddy's trip:</h2>
+        <h2>Join a buddy's trip:</h2>
             <table class="table table-hover">
                 <thead>
                 <tr>

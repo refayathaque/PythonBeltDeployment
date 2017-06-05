@@ -7,29 +7,26 @@
   </head>
   <body>
 
-    <h1>Trip Information:</h1>
-
+    <div class="jumbotron">
     {% for i in trip %}
-      <h2><em>Organizer</em> - {{i.created_by}}</h2>
-      <h3><em>From</em> - {{i.travel_start}}</h3>
-      <h3><em>To</em> - {{i.travel_end}}</h3>
-      <h2><em>Description</em> - {{i.description}}</h2>
+        <h1 class="display-3">{{ i.destination }}</h1>
+            <p class="lead">{{ i.description }}</p>
+        <hr class="my-4">
+            <h4>{{ i.travel_start }} - {{ i.travel_end }}</h4>
+            <h5><i>{{ i.created_by }}</i> (Organizer)</h5>
+    </div>
     {% endfor %}
 
+    <div class="container-fluid">
     {% if all_trip_users_minus_current_user %}
-    <h1>Trip Roster:</h1>
+        <h2 style="margin-bottom: 20px;">Buddies on this trip:</h2>
     {% endif %}
-
     {% for i in all_trip_users_minus_current_user %}
-    <!-- {% if i.username == trip.created_by %}
-    <ul>
-      <li><p>{{ i.name }} (Organizer)</p></li>
-    </ul>
-    {% endif %} -->
-    <ul>
-      <li><p>{{ i.name }}</p></li>
-    </ul>
+        <ul>
+            <li><h4><i>{{ i.name }}</i></h4></li>
+        </ul>
     {% endfor %}
+    </div>
 
     <div class="container-fluid">
     <form class="" action="/app2/travels" method="post">
